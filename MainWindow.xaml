@@ -5,8 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:XQfuncWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="616">
     <Grid>
+        <Canvas Background="LavenderBlush">
+            <Button Name="btnOpenFile" Click="btnOpenFile_Click" Canvas.Left="514" Canvas.Top="337">Open file</Button>
+            <Button Background="Blue" Opacity = "0.7" FontSize="26"  Content="search" 
+                    Height="52" Width="112" Canvas.Left="468" Canvas.Top="22" Click="Button_Click">
+            </Button>
 
+            <TextBox x:Name="path" TextWrapping="Wrap" GotFocus="HidePlaceholder" LostFocus="ShowPlaceholder" 
+                     Opacity="0.7" MaxLength="250" MouseDown="TextBox_MouseDoubleClick" MouseDoubleClick="TextBox_MouseDoubleClick" 
+                     Text="input path here" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" 
+                     Height="52" Width="423" Canvas.Left="22" Canvas.Top="22">
+            </TextBox>
+            <StackPanel Canvas.Left="37" Canvas.Top="114">
+                <TextBlock x:Name="ans" TextWrapping="Wrap" Canvas.Left="61" Canvas.Top="122">
+             <Run x:Name="prewiew" FontSize="20" Foreground="Red" FontWeight="Bold">Answer:</Run>
+                </TextBlock>
+                <TextBlock x:Name="ans1" TextWrapping="Wrap" Canvas.Left="171" Canvas.Top="126">
+                <Run x:Name="ans2" FontSize="16" Foreground="LightSeaGreen"> .   .   .</Run>
+                </TextBlock>
+
+            </StackPanel>
+
+            <TextBlock x:Name="pathblock" TextWrapping="Wrap" Height="25" Width="101" Canvas.Left="253" Canvas.Top="337">
+                <Run x:Name="filepathprewiew" FontSize="16" Foreground="DarkViolet" Text="file path"/><LineBreak /><Run Text=" "/>
+            </TextBlock>
+            <TextBlock x:Name="pathblock2" TextWrapping="Wrap" Height="51" Width="327" Canvas.Left="253" Canvas.Top="362">
+                <Run x:Name="filepath" FontSize="12" Foreground="PaleVioletRed" Text=" . . . "/>
+            </TextBlock>
+
+        </Canvas>
     </Grid>
 </Window>
